@@ -1,0 +1,14 @@
+{
+  "name": "luma-live",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Accessible museum companion and feasibility workbench for Ray-Ban Meta Gen 2",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --test",
+    "check": "node scripts/check.js",
+    "verify": "npm run check && npm test"
+  }
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Luma Live · Exploremos juntos</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#question">Ir a la conversación</a>
+  <header>
+    <a class="brand" href="/" aria-label="Luma Live, inicio"><span class="brand-mark" aria-hidden="true">l</span> luma <span>live</span></a>
+    <span class="badge">Prototipo de exploración cultural</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">UN MOMENTO, COMPARTIDO.</p>
+      <h1 id="title">Hay mucho por descubrir.<br><em>Exploremos juntos.</em></h1>
+      <p class="lede">Preguntá por una obra, descubrí sus detalles y elegí tu ritmo. Luma conserva el contexto de esta conversación.</p>
+    </section>
+    <div class="workspace">
+      <section class="conversation" aria-label="Conversar con Luma">
+        <div class="session-label"><span class="dot" aria-hidden="true"></span><span id="mode-label">Demostración · respuestas preescritas</span></div>
+        <div class="artwork">
+          <img id="sample" src="/sample.svg" alt="Ilustración ficticia de una pintura: círculo naranja sobre colinas azules. Placa: Horizonte compartido. Estudio de color, 2026.">
+          <video id="preview" playsinline autoplay muted hidden aria-label="Vista previa de la cámara del teléfono o computadora"></video>
+          <p id="camera-label" class="art-caption">Horizonte compartido · obra ficticia para ensayar</p>
+        </div>
+        <p id="frame-state" class="caption">Cámara apagada. Ninguna imagen se está capturando.</p>
+        <div id="transcript" class="transcript" role="log" aria-label="Conversación" aria-live="polite" aria-relevant="additions"></div>
+        <form id="ask-form">
+          <label for="question">¿Qué te gustaría explorar?</label>
+          <textarea id="question" rows="2" maxlength="1000" required placeholder="Por ejemplo: describime la composición de esta obra."></textarea>
+          <div class="quick-questions" aria-label="Preguntas sugeridas">
+            <button type="button" data-question="Describime esta obra de manera breve.">Describime la obra</button>
+            <button type="button" data-question="¿Podés leer la placa?">Leé la placa</button>
+            <button type="button" data-question="Contámelo más corto, por favor.">Más breve</button>
+          </div>
+          <div class="actions">
+            <button id="ask" class="primary" type="submit" disabled>Preguntarle a Luma <span aria-hidden="true">↗</span></button>
+            <button id="dictate" type="button" hidden>Dictar pregunta</button>
+            <button id="stop" type="button">Pausar todo</button>
+          </div>
+        </form>
+        <p id="status" role="status" aria-live="polite">Iniciando sesión local…</p>
+        <div class="audio-controls">
+          <label class="check"><input id="speak" type="checkbox"> Leer las respuestas en voz alta</label>
+          <button id="repeat" type="button">Repetir última respuesta</button>
+          <button id="clear" type="button">Nueva conversación</button>
+        </div>
+      </section>
+      <aside class="controls" aria-label="Controles de captura y medición">
+        <section class="panel">
+          <p class="eyebrow">01 / ELEGÍ TU EXPERIENCIA</p>
+          <label for="mode">Origen de las respuestas</label>
+          <select id="mode"><option value="fixture">Demostración sin IA · sin costo</option><option id="meta-option" value="meta" disabled>Meta API · requiere configuración</option></select>
+          <p id="provider-note" class="caption">Las respuestas del ejemplo son preescritas. No interpretan imágenes ni validan modelos.</p>
+          <label id="paid-label" class="check" hidden><input id="paid" type="checkbox"> Autorizo enviar las capturas y esta conversación a Meta mediante API paga.</label>
+          <button id="camera" type="button" class="wide">Activar cámara del teléfono / PC</button>
+          <p class="caption">Tus Ray-Ban Meta Gen 2 necesitan una integración nativa. Esta página no accede a la cámara de los lentes.</p>
+        </section>
+        <section class="panel">
+          <p class="eyebrow">02 / UN RATITO DE COMPAÑÍA</p>
+          <label for="interval">Intervalo entre observaciones</label>
+          <select id="interval"><option value="10000">10 segundos</option><option value="20000">20 segundos</option><option value="30000">30 segundos</option></select>
+          <button id="companion" type="button" class="wide">Iniciar sesión de 2 minutos</button>
+          <p class="caption">Hasta 12 consultas secuenciales. Usa tu pregunta actual; cada consulta observa una nueva imagen en modo Meta. La cámara permanece activa. No detecta obstáculos ni guía desplazamientos.</p>
+        </section>
+        <section class="panel metrics" aria-labelledby="metrics-title">
+          <p class="eyebrow" id="metrics-title">03 / LO QUE PODEMOS MEDIR</p>
+          <dl>
+            <div><dt>Respuestas de Meta</dt><dd id="metric-count">0</dd></div>
+            <div><dt>Latencia mediana completa</dt><dd id="metric-latency">Sin datos</dd></div>
+            <div><dt>Costo estimado conocido</dt><dd id="metric-cost">US$ 0.0000</dd></div>
+            <div><dt>Llamadas disponibles</dt><dd id="metric-remaining">—</dd></div>
+            <div><dt>Batería de tus lentes</dt><dd>Sin medir</dd></div>
+          </dl>
+          <button id="export" type="button" class="wide">Exportar métricas sin imágenes ni diálogo</button>
+          <p id="billing-note" class="caption">La latencia mide la respuesta completa; no el primer audio. Fallos y cancelaciones pueden tener cargos que no conocemos.</p>
+        </section>
+      </aside>
+    </div>
+    <footer>Vos elegís qué explorar. Luma acompaña la conversación.<br><span>Ensayo local · imágenes y conversación en memoria · sin validación en lentes ni con usuarios todavía.</span></footer>
+  </main>
+</body>
+</html>

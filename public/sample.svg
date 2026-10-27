@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#e7e5d8"/>
+  <path d="M0 410H1000V560H0Z" fill="#d4d3c1"/>
+  <rect x="252" y="36" width="496" height="369" rx="2" fill="#8e775a"/>
+  <rect x="265" y="49" width="470" height="343" fill="#f4f0db"/>
+  <rect x="277" y="61" width="446" height="319" fill="#a3bac0"/>
+  <circle cx="509" cy="166" r="72" fill="#ce794f"/>
+  <path d="M277 277Q388 207 496 286T723 251V380H277Z" fill="#517b8b"/>
+  <path d="M277 324Q401 271 522 332T723 304V380H277Z" fill="#2d596a"/>
+  <path d="M277 361Q418 311 548 363T723 347V380H277Z" fill="#193f51"/>
+  <rect x="427" y="425" width="191" height="58" rx="2" fill="#fffdf5"/>
+  <text x="440" y="446" fill="#254639" font-family="sans-serif" font-size="12">Horizonte compartido</text>
+  <text x="440" y="466" fill="#536358" font-family="sans-serif" font-size="10">Estudio de color, 2026 · obra ficticia</text>
+</svg>
